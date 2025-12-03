@@ -3,6 +3,9 @@ package stringutil
 import (
 	"strings"
 	"unicode"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 // Reverse returns the reverse of a string
@@ -39,9 +42,10 @@ func CountVowels(s string) int {
 	return count
 }
 
-// ToTitle converts a string to title case
+// ToTitle converts a string to title case using proper Unicode handling
 func ToTitle(s string) string {
-	return strings.Title(s)
+	caser := cases.Title(language.English)
+	return caser.String(s)
 }
 
 // WordCount returns the number of words in a string

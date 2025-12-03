@@ -88,7 +88,7 @@ func TestToTitle(t *testing.T) {
 		expected string
 	}{
 		{"lowercase", "hello world", "Hello World"},
-		{"mixed case", "hELLo WoRLd", "HELLo WoRLd"},
+		{"mixed case", "hELLo WoRLd", "Hello World"},
 		{"already title", "Hello World", "Hello World"},
 		{"empty", "", ""},
 	}
