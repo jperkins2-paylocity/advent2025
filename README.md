@@ -21,7 +21,7 @@ A Go project for learning and practicing Go programming with a focus on testing.
 
 ### Prerequisites
 
-- Go 1.16 or higher installed on your system
+- Go 1.18 or higher installed on your system (this project uses modern Go features)
 - Basic understanding of Go syntax
 
 ### Running Tests
