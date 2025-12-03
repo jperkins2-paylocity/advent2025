@@ -21,12 +21,13 @@ func Reverse(s string) string {
 func IsPalindrome(s string) bool {
 	s = strings.ToLower(s)
 	// Remove spaces and punctuation
-	cleaned := ""
+	var builder strings.Builder
 	for _, r := range s {
 		if unicode.IsLetter(r) || unicode.IsDigit(r) {
-			cleaned += string(r)
+			builder.WriteRune(r)
 		}
 	}
+	cleaned := builder.String()
 	return cleaned == Reverse(cleaned)
 }
 
