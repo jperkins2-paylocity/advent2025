@@ -12,6 +12,8 @@ A Go project for learning and practicing Go programming with a focus on testing.
 ├── stringutil/           # String manipulation utilities
 │   ├── stringutil.go     # String utility functions
 │   └── stringutil_test.go # Unit tests and benchmarks
+├── examples/             # Example programs demonstrating usage
+│   └── main.go           # Example program using both packages
 └── go.mod                # Go module definition
 ```
 
@@ -75,6 +77,13 @@ Build all packages:
 go build ./...
 ```
 
+Build and run the example program:
+```bash
+cd examples
+go build -o example main.go
+./example
+```
+
 Check for compilation errors:
 ```bash
 go vet ./...
@@ -120,12 +129,13 @@ go fmt ./...
 
 ## Next Steps
 
-1. **Explore the Code** - Read through the source files to understand the functions
-2. **Run the Tests** - Execute the test suite and observe the output
-3. **Modify Tests** - Try adding new test cases to existing tests
-4. **Write New Functions** - Add your own functions and corresponding tests
-5. **Experiment with Benchmarks** - Compare performance of different implementations
-6. **Add New Packages** - Create additional packages following the existing structure
+1. **Run the Example** - Build and run the example program to see the packages in action
+2. **Explore the Code** - Read through the source files to understand the functions
+3. **Run the Tests** - Execute the test suite and observe the output
+4. **Modify Tests** - Try adding new test cases to existing tests
+5. **Write New Functions** - Add your own functions and corresponding tests
+6. **Experiment with Benchmarks** - Compare performance of different implementations
+7. **Add New Packages** - Create additional packages following the existing structure
 
 ## Contributing
 
