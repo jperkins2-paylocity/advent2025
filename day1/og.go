@@ -13,15 +13,13 @@ var maxDialValue = 99
 var minDialValue = 0
 
 func main() {
-	// 1. Open the file
 	file, err := os.Open("day1/input1.txt")
 	if err != nil {
 		fmt.Printf("Error opening file: %v\n", err)
 		return
 	}
-	defer file.Close() // Ensure the file is closed when the function exits
+	defer file.Close()
 
-	// 2. Create a new Scanner for the file
 	scanner := bufio.NewScanner(file)
 	zeroCount := 0
 	fullRotations := 0
