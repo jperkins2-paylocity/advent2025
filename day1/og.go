@@ -40,33 +40,23 @@ func main() {
 			fullRotations += value / totalDialPositions
 			clicks := value % totalDialPositions
 
-			temp := 0
-
 			switch direction {
 			case 'R':
-				temp = currentDialPosition + clicks
-				if currentDialPosition != 0 && temp > maxDialValue {
-					fullRotations++
+				currentDialPosition += clicks
+				if currentDialPosition > maxDialValue {
+					currentDialPosition %= totalDialPositions
+					if currentDialPosition != 0 {
+						fullRotations++
+					}
 				}
-				currentDialPosition = temp
-				// if currentDialPosition > maxDialValue {
-				// 	currentDialPosition %= totalDialPositions
-				// 	if currentDialPosition != 0 {
-				// 		fullRotations++
-				// 	}
-				// }
 			case 'L':
-				temp = currentDialPosition - clicks
-				if currentDialPosition != 0 && temp < minDialValue {
-					fullRotations++
+				currentDialPosition -= clicks
+				if currentDialPosition < minDialValue {
+					currentDialPosition = (currentDialPosition + totalDialPositions)
+					if currentDialPosition != 0 {
+						fullRotations++
+					}
 				}
-				currentDialPosition = temp
-				// if currentDialPosition < minDialValue {
-				// 	currentDialPosition = (currentDialPosition + totalDialPositions)
-				// 	if currentDialPosition != 0 {
-				// 		fullRotations++
-				// 	}
-				// }
 			default:
 				panic("invalid direction")
 			}
